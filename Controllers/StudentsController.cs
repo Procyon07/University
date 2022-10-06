@@ -20,5 +20,25 @@ namespace University.Controllers
         {
             return View(await _context.Students.ToListAsync());
         }
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var student = await _context.Students
+                .Include(s => s.Enrollments)
+                    .ThenInclude(e => e.Course)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.StudentID == id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+
+            return View(student);
+            
+        }
     }
 }
