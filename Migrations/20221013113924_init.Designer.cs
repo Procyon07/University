@@ -10,8 +10,8 @@ using University.Data;
 namespace University.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20221006120609_initi")]
-    partial class initi
+    [Migration("20221013113924_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -66,7 +66,7 @@ namespace University.Migrations
 
             modelBuilder.Entity("University.Models.Student", b =>
                 {
-                    b.Property<int>("StudentID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -80,7 +80,7 @@ namespace University.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("StudentID");
+                    b.HasKey("ID");
 
                     b.ToTable("Student");
                 });

@@ -64,7 +64,7 @@ namespace University.Migrations
 
             modelBuilder.Entity("University.Models.Student", b =>
                 {
-                    b.Property<int>("StudentID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -78,7 +78,7 @@ namespace University.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("StudentID");
+                    b.HasKey("ID");
 
                     b.ToTable("Student");
                 });
