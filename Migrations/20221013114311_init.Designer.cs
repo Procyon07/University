@@ -10,7 +10,7 @@ using University.Data;
 namespace University.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20221013113924_init")]
+    [Migration("20221013114311_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
