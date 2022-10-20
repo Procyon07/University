@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace University.Models
 {
-    public class Student
+    public class Instructor
     {
         [Key]
         public int Id { get; set; }
@@ -19,16 +19,15 @@ namespace University.Models
         [Display(Name = "First Name")]
         public string FirstMidName { get; set; }
         [Display(Name = "Full Name")]
-        public string FullName 
-        { 
+        public string FullName
+        {
             get
             {
                 return LastName + "," + LastName;
             }
         }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime EnrollmentDate { get; set; }
-        public ICollection<Enrollment> Enrollments { get; set; }
+        public DateTime HireDate { get; set; }
+        public ICollection<CourseAssignment> CourseAssignments { get; set; }
+        public OfficeAssignment OfficeAssignment { get; set; }
     }
 }
