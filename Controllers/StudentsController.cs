@@ -173,7 +173,8 @@ namespace University.Controllers
 
             try
             {
-                _context.Students.Remove(student);
+                Student studentToDelete = new Student() { Id = id };
+                _context.Entry(studentToDelete).State = EntityState.Deleted;
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
