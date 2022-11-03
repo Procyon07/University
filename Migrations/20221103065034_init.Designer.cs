@@ -10,8 +10,8 @@ using University.Data;
 namespace University.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20221020112235_NewEntities")]
-    partial class NewEntities
+    [Migration("20221103065034_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
